@@ -1,0 +1,30 @@
+{
+    "full_name": "Abderrahim Guennoune",
+    "version": "0.1.0",
+    "app_title": "Base Project",
+    "short_description": "Base Project",
+    "year": "2023",
+    "project_name": "Base Project",
+    "project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')}}",
+    "domain_main": "{{cookiecutter.project_slug}}.com",
+
+    "secret_key": "changethis",
+    "admin_username": "admin@{{cookiecutter.domain_main}}",
+    "admin_password": "changethis",
+    "backend_cors_origins": "[\"http://localhost\", \"localhost:9000\", \"http://localhost:3000\", \"http://localhost:8080\", \"https://localhost\", \"https://localhost:9000\", \"https://localhost:3000\", \"https://localhost:8080\", \"http://dev.{{cookiecutter.domain_main}}\", \"https://{{cookiecutter.domain_main}}\"]",
+
+    "smtp_port": "587",
+    "smtp_host": "",
+    "smtp_user": "",
+    "smtp_password": "",
+    "smtp_emails_from_email": "info@{{cookiecutter.domain_main}}",
+
+    "postgres_password": "changethis",
+
+    "_copy_without_render": [
+        "frontend/src/**/*.html",
+        "frontend/src/**/*.vue",
+        "frontend/node_modules/*",
+        "backend/app/app/email-templates/**"
+    ]
+}
