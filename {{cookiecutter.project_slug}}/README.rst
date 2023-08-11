@@ -1,0 +1,13 @@
+{{cookiecutter.app_title}}
+=========================
+
+{{cookiecutter.short_description}}
+
+---
+
+This is an update of the `FastAPI`_ app, initially generated with `Cookiecutter`_ along with `@tiangolo`_'s
+`full-stack-fastapi-postgresql`_ template.
+
+.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
+.. _`@tiangolo`: https://github.com/tiangolo/full-stack-fastapi-postgresql
+.. _`full-stack-fastapi-postgresql`: https://github.com/tiangolo/full-stack-fastapi-postgresql
