@@ -69,10 +69,18 @@ import { mapState } from 'vuex';
 import { uris } from './constants';
 
 import Navigation from './components/Navigation.vue';
-import i18n from './i18n';
+import Buefy from 'buefy';
+import VueI18n from 'vue-i18n';
 
 export default Vue.extend({
   name: 'App',
+
+  // Internationalisation.
+  Vue.use(VueI18n);
+  const i18n = new VueI18n();
+
+  Vue.use(Buefy, {});
+  Vue.config.productionTip = false;
 
   components: {
     Navigation,
