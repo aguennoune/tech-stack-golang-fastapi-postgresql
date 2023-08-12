@@ -14,7 +14,7 @@
             :activeItem="activeItem" :activeGroup="activeGroup" @toggleGroup="toggleGroup"
             @doLogout="doLogout" />
           <b-navbar-item v-else tag="div">
-            <a href="#" @click.prevent="doLogout">{{ $t('users.logout') }}</a>
+            <a href="#" @click.prevent="doLogout">{{ $t('message') }}</a>
           </b-navbar-item>
         </template>
     </b-navbar>

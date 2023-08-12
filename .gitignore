@@ -121,6 +121,7 @@ celerybeat.pid
 
 # Environments
 .env
+tech-stack-env/
 .venv
 env/
 venv/
