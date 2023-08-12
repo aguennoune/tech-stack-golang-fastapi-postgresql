@@ -6,7 +6,7 @@
 ---
 
 This is an update of the `FastAPI`_ app, initially generated with `Cookiecutter`_ along with `@tiangolo`_'s
-`full-stack-fastapi-postgresql`_ template, and also with `@knadh`_'s `listmonk`_ mailing list manager.
+`full-stack-fastapi-postgresql`_ template, and with `@knadh`_'s `listmonk`_ mailing list manager.
 
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`@tiangolo`: https://github.com/tiangolo/full-stack-fastapi-postgresql
