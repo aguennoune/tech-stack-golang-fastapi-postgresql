@@ -14,7 +14,7 @@
             :activeItem="activeItem" :activeGroup="activeGroup" @toggleGroup="toggleGroup"
             @doLogout="doLogout" />
           <b-navbar-item v-else tag="div">
-            <a href="#" @click.prevent="doLogout">{{ $t('message') }}</a>
+            <a href="#" @click.prevent="doLogout">{{ $t('users.logout') }}</a>
           </b-navbar-item>
         </template>
     </b-navbar>
@@ -69,6 +69,7 @@ import { mapState } from 'vuex';
 import { uris } from './constants';
 
 import Navigation from './components/Navigation.vue';
+import i18n from './i18n';
 
 export default Vue.extend({
   name: 'App',
