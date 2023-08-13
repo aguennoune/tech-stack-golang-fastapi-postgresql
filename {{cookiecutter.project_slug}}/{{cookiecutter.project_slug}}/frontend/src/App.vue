@@ -13,9 +13,13 @@
           <navigation v-if="isMobile" :isMobile="isMobile"
             :activeItem="activeItem" :activeGroup="activeGroup" @toggleGroup="toggleGroup"
             @doLogout="doLogout" />
-          <b-navbar-item v-else tag="div">
+          <!-- <b-navbar-item v-else tag="div">
             <a href="#" @click.prevent="doLogout">{{ $t('users.logout') }}</a>
+          </b-navbar-item> -->
+          <b-navbar-item v-else tag="div">
+            <a href="#" @click.prevent="doLogout">{{ $$t('users.logout') }}</a>
           </b-navbar-item>
+
         </template>
     </b-navbar>
 
@@ -42,15 +46,15 @@
       <div class="main">
         <div class="global-notices" v-if="serverConfig.needs_restart || serverConfig.update">
           <div v-if="serverConfig.needs_restart" class="notification is-danger">
-            {{ $t('settings.needsRestart') }}
+            {{ $$t('settings.needsRestart') }}
              &mdash;
             <b-button class="is-primary" size="is-small"
               @click="$utils.confirm($t('settings.confirmRestart'), reloadApp)">
-                {{ $t('settings.restart') }}
+                {{ $$t('settings.restart') }}
             </b-button>
           </div>
           <div v-if="serverConfig.update" class="notification is-success">
-            {{ $t('settings.updateAvailable', { version: serverConfig.update.version }) }}
+            {{ $$t('settings.updateAvailable', { version: serverConfig.update.version }) }}
             <a :href="serverConfig.update.url" target="_blank">View</a>
           </div>
         </div>
