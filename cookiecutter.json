@@ -1,6 +1,6 @@
 {
     "project_name": "Base Project",
-    "app_title": "Base Project",
+    "app_name": "{{cookiecutter.project_name}}",
     "short_description": "A World Virtualization Project",
     "full_name": "Abderrahim Guennoune",
     "email": "aguennoune@outlook.com",
