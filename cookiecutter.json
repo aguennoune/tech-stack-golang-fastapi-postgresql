@@ -1,5 +1,6 @@
 {
     "project_name": "Base Project",
+    "app_title": "Base Project",
     "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
     "domain_main": "{{cookiecutter.project_slug}}.com",
     "domain_staging": "stag.{{cookiecutter.domain_main}}",
