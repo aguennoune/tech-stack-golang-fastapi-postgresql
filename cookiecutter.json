@@ -27,6 +27,14 @@
         "frontend/src/**/*.html",
         "frontend/src/**/*.vue",
         "frontend/node_modules/*",
+        "frontend/src/api/**",
+        "frontend/src/assets/**",
+        "frontend/src/components/**",
+        "frontend/src/constants.js",
+        "frontend/src/main.js",
+        "frontend/src/router/**",
+        "frontend/src/store/**",
+        "frontend/src/utils/**",
         "backend/app/app/email-templates/**"
     ]
 }
