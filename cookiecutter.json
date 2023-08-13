@@ -1,14 +1,8 @@
 {
-    "full_name": "Abderrahim Guennoune",
-    "email": "aguennoune@outlook.com",
-    "repo_name": "base-project",
-    "version": "0.1.0",
-    "app_title": "Base Project",
-    "short_description": "Base Project",
-    "year": "2023",
     "project_name": "Base Project",
-    "project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')}}",
+    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
     "domain_main": "{{cookiecutter.project_slug}}.com",
+    "domain_staging": "stag.{{cookiecutter.domain_main}}",
 
     "secret_key": "changethis",
     "first_superuser": "admin@{{cookiecutter.domain_main}}",
@@ -22,6 +16,8 @@
     "smtp_emails_from_email": "info@{{cookiecutter.domain_main}}",
 
     "postgres_password": "changethis",
+    "pgadmin_default_user": "{{cookiecutter.first_superuser}}",
+    "pgadmin_default_user_password": "{{cookiecutter.first_superuser_password}}",
 
     "_copy_without_render": [
         "frontend/src/**/*.html",
