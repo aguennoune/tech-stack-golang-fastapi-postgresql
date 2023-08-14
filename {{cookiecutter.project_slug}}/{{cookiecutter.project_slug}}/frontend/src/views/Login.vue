@@ -42,7 +42,7 @@ import { dispatchLogIn } from '@/store/main/actions';
 export default class Login extends Vue {
   public email: string = '';
   public password: string = '';
-  public appName = appName;
+  public appName = "{{cookiecutter.project_name}}";
 
   public get loginError() {
     return readLoginError(this.$store);
