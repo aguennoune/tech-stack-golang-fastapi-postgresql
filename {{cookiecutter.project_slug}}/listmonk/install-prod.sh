@@ -56,15 +56,15 @@ download() {
 	curl --fail --silent --location --output "$2" "$1"
 }
 
-# is_healthy() {
-# 	info "waiting for db container to be up. retrying in 3s"
-# 	health_status="$(docker inspect -f '{{.State.Health.Status}}' "$1")"
-# 	if [ "$health_status" = "healthy" ]; then
-# 		return 0
-# 	else
-# 		return 1
-# 	fi
-# }
+is_healthy() {
+	info "waiting for db container to be up. retrying in 3s"
+	health_status="$(docker inspect -f '{{.State.Health.Status}}' "$1")"
+	if [ "$health_status" = "healthy" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
 
 is_running() {
 	info "checking if "$1" is running"
