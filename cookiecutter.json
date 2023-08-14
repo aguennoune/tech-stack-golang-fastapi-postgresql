@@ -10,7 +10,7 @@
     "domain_staging": "stag.{{cookiecutter.domain_main}}",
 
     "secret_key": "changethis",
-    "valid_hours": "",
+    "valid_hours": "60 * 24 * 8",
     "first_superuser": "admin@{{cookiecutter.domain_main}}",
     "first_superuser_password": "changethis",
     "backend_cors_origins": "[\"http://localhost\", \"http://localhost:8025\", \"localhost:9000\", \"http://localhost:3000\", \"http://localhost:8080\", \"https://localhost\", \"https://localhost:9000\", \"https://localhost:3000\", \"https://localhost:8080\", \"http://dev.{{cookiecutter.domain_main}}\", \"https://{{cookiecutter.domain_main}}\"]",
@@ -26,9 +26,6 @@
     "pgadmin_default_user_password": "{{cookiecutter.first_superuser_password}}",
 
     "_copy_without_render": [
-        "frontend/src/**/*.html",
-        "frontend/src/**/*.vue",
-        "frontend/node_modules/*",
         "backend/app/app/email-templates/**"
     ]
 }
