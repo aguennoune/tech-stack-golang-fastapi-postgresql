@@ -24,11 +24,11 @@ class Settings(BaseSettings):
             return v
         raise ValueError(v)
 
-    PROJECT_NAME: str
+    PROJECT_NAME: str = "{{cookiecutter.project_name}}"
 
     POSTGRES_SERVER: str = "localhost"
     POSTGRES_USER: str = "listmonk_admin_user"
-    POSTGRES_PASSWORD: str = "listmonk_admin_password"
+    POSTGRES_PASSWORD: str = "{{cookiecutter.postgres_password}}"
     POSTGRES_DB: str = "golang_listmonk_db"
     SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
 
@@ -71,8 +71,8 @@ class Settings(BaseSettings):
         )
 
     EMAIL_TEST_USER: EmailStr = "test@example.com"  # type: ignore
-    FIRST_SUPERUSER: EmailStr
-    FIRST_SUPERUSER_PASSWORD: str
+    FIRST_SUPERUSER: EmailStr = "{{cookiecutter.first_superuser}}"
+    FIRST_SUPERUSER_PASSWORD: str = "{{cookiecutter.first_superuser_password}}"
     USERS_OPEN_REGISTRATION: bool = False
 
     class Config:
