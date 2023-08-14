@@ -2,10 +2,6 @@
 
 ##### Testing the frontend app:
 
-GitHub Copilot:
-
-That's a good point. It's possible that the issue is related to the backend API not properly handling the request from the frontend app. 
-
 To test the frontend app and its functionalities, you can use a tool like `vue-test-utils` to write unit tests for your Vue components. 
 
 Here's an example of how you can write a unit test for your `Login.vue` component:
