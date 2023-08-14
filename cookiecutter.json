@@ -27,7 +27,6 @@
     "_copy_without_render": [
         "frontend/src/**/*.html",
         "frontend/src/**/*.vue",
-        "frontend/node_modules/*",
-        "backend/app/app/email-templates/**"
+        "frontend/node_modules/*"
     ]
 }
