@@ -26,9 +26,9 @@
     "pgadmin_default_user_password": "{{cookiecutter.first_superuser_password}}",
 
     "_copy_without_render": [
-        "listmonk/data/**/*",
-        "listmonk/static/email-template/*.html",
-        "listmonk/static/public/**/*.html",
+        "../listmonk/data/**/*",
+        "../listmonk/static/email-template/*.html",
+        "../listmonk/static/public/**/*.html",
         "backend/app/app/email-templates/**"
     ]
 }
