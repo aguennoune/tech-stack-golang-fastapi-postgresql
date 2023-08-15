@@ -3,18 +3,12 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>{{ .Data.Title }} - {{ .SiteName }}</title>
+	<title>{{ .Data.Title }}</title>
 	<meta name="description" content="{{ .Data.Description }}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-	{{ if .EnablePublicArchive }}
-		<link rel="alternate" type="application/rss+xml" title="{{ L.T "public.archiveTitle" }} - {{ .SiteName }}"
-			href="{{ .RootURL }}/archive.xml" />
-	{{ end }}
-
-	<link href="/public/static/style.css?v2.3.0" rel="stylesheet" type="text/css" />
-	<link href="/public/custom.css" rel="stylesheet" type="text/css">
-	<script src="/public/custom.js" async defer></script>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+	<link href="/public/static/style.css" rel="stylesheet" type="text/css" />
 
 	{{ if ne .FaviconURL "" }}
 		<link rel="shortcut icon" href="{{ .FaviconURL }}" type="image/x-icon" />
@@ -26,13 +20,11 @@
     <div class="container wrap">
 		<header class="header">
 			<div class="logo">
-				<a href="{{ if .EnablePublicSubPage }}{{ .RootURL}}/subscription/form{{ end }}">
 				{{ if ne .LogoURL "" }}
-					<img src="{{ .LogoURL }}" alt="{{ .Data.Title }}" /></a>
+					<img src="{{ .LogoURL }}" alt="{{ .Data.Title }}" />
 				{{ else }}
 					<img src="/public/static/logo.svg" alt="{{ .Data.Title }}" />
 				{{ end }}
-				</a>
 			</div>
 		</header>
 {{ end }}
@@ -40,9 +32,11 @@
 {{ define "footer" }}
 	</div>
 	
-	<footer class="container">
-		{{ L.T "public.poweredBy" }} <a target="_blank" href="https://listmonk.app">listmonk</a>
-	</footer>
+	<div class="container">
+		<footer class="footer">
+			Powered by <a target="_blank" href="https://listmonk.app">listmonk</a>
+		</footer>
+	</div>
 </body>
 </html>
 {{ end }}

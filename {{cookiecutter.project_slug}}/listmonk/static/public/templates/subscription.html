@@ -1,64 +1,22 @@
 {{ define "subscription" }}
 {{ template "header" .}}
 <section class="section">
-    {{ if not .Data.ShowManage }}
-        <h2>{{ L.T "public.unsubTitle" }}</h2>
-        <form method="post">
-            <div>
-                {{ if .Data.AllowBlocklist }}
-                    <p>{{ L.T "public.unsubHelp" }}</p>
-                    <p>
-                        <input id="privacy-blocklist" type="checkbox" name="blocklist" value="true" />
-                        <label for="privacy-blocklist">{{ L.T "public.unsubFull" }}</label>
-                    </p>
-                {{ end }}
-
+    <h2>{{ L.T "public.unsubTitle" }}</h2>
+    <p>{{ L.T "public.unsubHelp" }}</p>
+    <form method="post">
+        <div>
+            {{ if .Data.AllowBlocklist }}
                 <p>
-                    <button type="submit" class="button" id="btn-unsub">{{ L.T "public.unsub" }}</button>
+                    <input id="privacy-blocklist" type="checkbox" name="blocklist" value="true" />
+                    <label for="privacy-blocklist">{{ L.T "public.unsubFull" }}</label>
                 </p>
+            {{ end }}
 
-                {{ if .Data.AllowPreferences }}
-                    <a href="?manage=true">{{ L.T "public.managePrefs" }}</a>
-                {{ end }}
-            </div>
-        </form>
-    {{ else }}
-        <form method="post">
-            <div>
-                <input type="hidden" name="manage" value="true" />
-
-                <h2>{{ L.T "public.managePrefs" }}</h2>
-                <label>{{ L.T "globals.fields.name" }}</label>
-                <input type="text" name="name" value="{{ .Data.Subscriber.Name }}" maxlength="256" required />
-
-                {{ if .Data.Subscriptions }}
-                    <br /><br />
-                    <h3>{{ L.T "public.managePrefsUnsub" }}</h3>
-                    <ul class="lists">
-                        {{ range $i, $l := .Data.Subscriptions }}
-                            {{ if ne $l.SubscriptionStatus.Value "unsubscribed" }}
-                                <li>
-                                    <input id="l-{{ $l.UUID}}" type="checkbox" name="l" value="{{ $l.UUID }}" checked />
-                                    <label for="l-{{ $l.UUID}}">{{ $l.Name }}</label>
-                                </li>
-                            {{ end }}
-                        {{ end }}
-                    </ul>
-                {{ end }}
-
-                {{ if .Data.AllowBlocklist }}
-                    <p>
-                        <input id="privacy-blocklist" type="checkbox" name="blocklist" value="true" onchange="unsubAll(event)" />
-                        <label for="privacy-blocklist">{{ L.T "public.unsubFull" }}</label>
-                    </p>
-                {{ end }}
-
-                <p>
-                    <button type="submit" class="button" id="btn-unsub">{{ L.T "globals.buttons.save" }}</button>
-                </p>
-            </div>
-        </form>
-    {{ end }}
+            <p>
+                <button type="submit" class="button" id="btn-unsub">{{ L.T "public.unsub" }}</button>
+            </p>
+        </div>
+    </form>
 </section>
 
 {{ if or .Data.AllowExport .Data.AllowWipe }}
@@ -67,19 +25,27 @@
         <h2>{{ L.T "public.privacyTitle" }}</h2>
         {{ if .Data.AllowExport }}
         <div class="row">
-            <input id="privacy-export" type="radio" name="data-action" value="export" required />
-            <label for="privacy-export"><strong>{{ L.T "public.privacyExport" }}</strong></label>
-            <br />
-            {{ L.T "public.privacyExportHelp" }}
+            <div class="one columns">
+                <input id="privacy-export" type="radio" name="data-action" value="export" required />
+            </div>
+            <div class="ten columns">
+                <label for="privacy-export"><strong>{{ L.T "public.privacyExport" }}</strong></label>
+                <br />
+                {{ L.T "public.privacyExportHelp" }}
+            </div>
         </div>
         {{ end }}
 
         {{ if .Data.AllowWipe }}
         <div class="row">
-            <input id="privacy-wipe" type="radio" name="data-action" value="wipe" required />
-            <label for="privacy-wipe"><strong>{{ L.T "public.privacyWipe" }}</strong></label>
-            <br />
-            {{ L.T "public.privacyWipeHelp" }}
+            <div class="one columns">
+                <input id="privacy-wipe" type="radio" name="data-action" value="wipe" required />
+            </div>
+            <div class="ten columns">
+                <label for="privacy-wipe"><strong>{{ L.T "public.privacyWipe" }}</strong></label>
+                <br />
+                {{ L.T "public.privacyWipeHelp" }}
+            </div>
         </div>
         {{ end }}
         <p>
@@ -99,22 +65,6 @@
             return true;
         }
         return false;
-    }
-
-    function unsubAll(e) {
-        if (e.target.checked) {
-            document.querySelector("input[name=name]").disabled = "disabled";
-        } else {
-            document.querySelector("input[name=name]").removeAttribute("disabled");
-        }
-
-        document.querySelectorAll('input[type=checkbox][name=l]').forEach(function(l) {
-            if (e.target.checked) {
-                l.disabled = "disabled";
-            } else {
-                l.removeAttribute("disabled");
-            }
-        });
     }
 </script>
 {{ end }}

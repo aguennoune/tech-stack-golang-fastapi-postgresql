@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
     <head>
-        <title>{{ .Campaign.Subject }}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
         <base target="_blank">
+
         <style>
             body {
                 background-color: #F0F1F3;
@@ -13,20 +13,6 @@
                 line-height: 26px;
                 margin: 0;
                 color: #444;
-            }
-
-            pre {
-                background: #f4f4f4f4;
-                padding: 2px;
-            }
-
-            table {
-                width: 100%;
-                border: 1px solid #ddd;
-            }
-            table td {
-                border-color: #ddd;
-                padding: 5px;
             }
 
             .wrap {
@@ -38,7 +24,7 @@
             }
 
             .button {
-                background: #0055d4;
+                background: #7f2aff;
                 border-radius: 3px;
                 text-decoration: none !important;
                 color: #fff !important;
@@ -57,7 +43,6 @@
             }
                 .footer a {
                     color: #888;
-                    margin-right: 5px;
                 }
 
             .gutter {
@@ -66,11 +51,10 @@
 
             img {
                 max-width: 100%;
-                height: auto;
             }
 
             a {
-                color: #0055d4;
+                color: #7f2aff;
             }
                 a:hover {
                     color: #111;
@@ -95,9 +79,8 @@
         <p>
             {{ L.T "email.unsubHelp" }}
             <a href="{{ UnsubscribeURL }}" style="color: #888;">{{ L.T "email.unsub" }}</a>
-            <a href="{{ MessageURL }}" style="color: #888;">{{ L.T "email.viewInBrowser" }}</a>
         </p>
-        <p>{{ L.T "public.poweredBy" }} <a href="https://listmonk.app" target="_blank" style="color: #888;">listmonk</a></p>
+        <p>Powered by <a href="https://listmonk.app" target="_blank" style="color: #888;">listmonk</a></p>
     </div>
     <div class="gutter" style="padding: 30px;">&nbsp;{{ TrackView }}</div>
 </body>
