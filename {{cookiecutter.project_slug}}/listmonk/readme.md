@@ -1,4 +1,4 @@
-# Listmonk `{{cookiecutter.version}}` production setup example
+# Listmonk {{cookiecutter.version}} production setup example
 
 Hi people! 👋 This repo is just an example of how you can potentially set up [listmonk](https://github.com/knadh/listmonk) in production. This setup adds SSL support to listmonk. I have written an extensive guide on [how to setup listmonk](https://yasoob.me/posts/setting-up-listmonk-opensource-newsletter-mailing/). It might be helpful to read that before cloning this repo.
 
